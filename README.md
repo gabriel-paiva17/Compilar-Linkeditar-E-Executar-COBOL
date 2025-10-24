@@ -26,5 +26,4 @@ Nesse caso é bem mais simples, o exemplo utilizado faz uma chamada API via **BA
 
 Abaixo está uma lista de elementos que precisam ser encontrados, ou criados para que o programa seja executado. **Lembre-se**: você pode utilizar elementos equivalentes sem problema algum.
 
-# placeholder da imagem
-
+<img width="1099" height="110" alt="image" src="https://github.com/user-attachments/assets/53be47d5-df9f-493b-a86c-bcc55f271323" />
