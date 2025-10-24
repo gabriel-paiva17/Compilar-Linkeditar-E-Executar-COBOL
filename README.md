@@ -18,7 +18,7 @@ Você pode reaproveitar os JOBS ZCCOLCK e COBGO para compilar, link-editar e exe
 
 # Se você quer fazer uma chamada API utilizando o z/OS Connect Requester OAS2
 
-Recomendamos fortemente que os demais passos contidos nesse arquivo já tenham sido configurados (configuração do server.xml e geracão dos copybooks e do .ara): placeholder
+Recomendamos fortemente que os demais passos contidos nesse arquivo já tenham sido configurados (configuração do server.xml e geracão dos copybooks e do .ara): [Configurando Requester Parte 1](https://github.com/gabriel-paiva17/Compilar-Linkeditar-E-Executar-COBOL/blob/main/configs-para-zcee-req/Configurando%20um%20API%20Requester%20em%20OAS%202%20-%20Parte%201.pdf)
 
 Nesse caso é bem mais simples, o exemplo utilizado faz uma chamada API via **BATCH**, mas pode ser muito útil para outras formas de chamada também. Lembre-se de substituir as variáveis para valores existentes no seu contexto.
 
