@@ -2,7 +2,7 @@
 
 ## ZCCOLCK
 
-JCL que utiliza a procedure IGYWCL para compilar um código-fonte COBOL baseado no template SAMPREQ. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
+JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte COBOL baseado no template SAMPREQ. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
 
 ## COBGO
 
