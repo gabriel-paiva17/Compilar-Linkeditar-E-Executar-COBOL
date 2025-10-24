@@ -1,0 +1,61 @@
+//ZCCOLK JOB ,MSGCLASS=H,REGION=0M,TIME=10,
+// MSGLEVEL=(1,1),NOTIFY=&SYSUID
+//*
+//* Aqui aponte para onde está a sua procedure IGYWCL
+//ORDER JCLLIB ORDER=(ZOS31.CPAC.PROCLIB)
+//*****************************************************************
+//* ZCCOLK,
+//*     Compilar e link-editar um programa COBOL para uma 
+//*     chamada API via BATCH (z/OS Connect Requester OAS2)
+//*****************************************************************
+// SET HLQWCL=GABRIEL
+//*
+//* LNGPRFX -> Prefixo dos datasets para compilacao COBOL
+//* LIBPRFX -> Prefixo dos datasets de runtime LE do COBOL
+//ZCCOLK EXEC IGYWCL,LNGPRFX='ZOS31.IGY',
+//  LIBPRFX='CEE',
+//  PARM.COBOL='SOURCE',
+//  PARM.LKED='LIST MAP XREF'
+//*
+//* Código-fonte COBOL
+//COBOL.SYSIN    DD DISP=SHR,DSN=&HLQWCL..COBOL(SAMPREQ)
+//*
+//*
+//* A SYSLIB desse step deve ser preenchida com o PDS dos 
+//* COPYBOOKS utilizados no código-fonte COBOL (COPY)
+//*
+//* NO CONTEXTO DO Z/OS CONNECT REQUESTER OAS2:
+//* 	BAQRINFO e estruturas INFO, REQ e RES	
+//COBOL.SYSLIB   DD DISP=SHR,DSN=&HLQWCL..COBOL.COPYLIB
+//*
+//* Onde será gerado o objeto compilado e seu nome
+//COBOL.SYSLIN   DD DISP=SHR,DSN=&HLQWCL..COBOL.OBJECT(SAMPREQ)
+//*
+//* Onde gerar arquivo de logs da compilação
+//COBOL.SYSPRINT DD DISP=SHR,DSN=&HLQWCL..COBOL.LISTING(SAMPREQ)
+//*
+//* Apontar para o PDS onde você gerou o objeto
+//LKED.OBJECT    DD DISP=SHR,
+//  DSN=&HLQWCL..COBOL.OBJECT
+//*
+//* 
+//* Aqui devemos informar o PDS dos programas que 
+//* o código-fonte COBOL chama (CALL)
+//*
+//* NO CONTEXTO DO Z/OS CONNECT REQUESTER OAS2:
+//* 	O COBOL chama o  programa 'BAQCSTUB'. 
+//*	No PDS SBAQLIB1 caso seja CICS.
+//*	Caso seja outra aplicacao (como BATCH), no PDS SBAQLIB
+//LKED.RESLIB    DD DISP=SHR,DSN=BAQ300.SBAQLIB
+//*
+//* Configurações do que será gerado no LOAD
+//LKED.SYSLIN    DD *
+    INCLUDE OBJECT(SAMPREQ)
+    ENTRY SAMPREQ
+    NAME SAMPREQ(R)
+/*
+//*
+//* Indique o member em que você quer que o
+//* programa executável seja gerado
+//LKED.SYSLMOD   DD DISP=SHR,
+//  DSN=&HLQWCL..COBOL.LOAD(SAMPREQ)

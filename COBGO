@@ -1,0 +1,28 @@
+//COBGO JOB ,MSGCLASS=H,REGION=0M,TIME=10,
+// MSGLEVEL=(1,1),NOTIFY=&SYSUID
+//* 
+//* Em PGM, coloque o nome do Member onde foi
+//* gerado o programa executável
+//GO     EXEC PGM=SAMPREQ,
+//             REGION=0M
+//* 
+//* Na STEPLIB aponte para:
+//* - o PDS onde está o Member do programa
+//* - os datasets de runtime LE
+//* - os PDS onde estão os programas chamados
+//*   pelo COBOL
+//STEPLIB  DD  DISP=SHR,DSN=GABRIEL.COBOL.LOAD
+// 	   DD  DSNAME=ZOS31.CEE.SCEERUN,DISP=SHR
+//         DD  DSNAME=ZOS31.CEE.SCEERUN2,DISP=SHR
+//         DD  DSN=BAQ300.SBAQLIB,DISP=SHR
+//SYSPRINT DD  SYSOUT=*
+//CEEDUMP  DD  SYSOUT=*
+//SYSUDUMP DD  SYSOUT=*
+//*
+//* Estes são parâmetros do z/OS Connect, nao sao
+//* comuns em outros programas.(Apague se preciso)
+//*
+//* Aqui informamos a URI (dominio) e porta da REQ
+//CEEOPTS DD *
+    POSIX(ON),
+    ENVAR("BAQURI=54.146.129.137", "BAQPORT=443")
