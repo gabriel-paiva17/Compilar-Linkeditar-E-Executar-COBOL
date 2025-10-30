@@ -2,11 +2,15 @@
 
 ## ZCCOLCK
 
-JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte COBOL baseado no template SAMPREQ. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
+JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte COBOL baseado no template SAMPREQ, gerando um **programa COBOL BATCH**. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
 
 ## COBGO
 
 JCL que executa o programa gerado pelo JOB ZCCOLCK. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
+
+## ZCCOLCKC
+
+JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte COBOL baseado no template SAMPREQC (SAMPREQ com algumas alterações para que ele execute comandos CICS), gerando um **programa COBOL CICS**. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
 
 ## SAMPREQ
 
@@ -14,7 +18,7 @@ Template de um código-fonte COBOL que faz uma chamada API via z/OS Connect Requ
 
 # Se você deseja compilar outro tipo de programa
 
-Você pode reaproveitar os JOBS ZCCOLCK e COBGO para compilar, link-editar e executar qualquer outro programa COBOL. E se quiser aproveitar o template SAMPREQ para escrever outro programa COBOL.
+Você pode reaproveitar os JOBS ZCCOLCK, ZCCOLKC e COBGO para compilar, link-editar e executar qualquer outro programa COBOL. E se quiser aproveitar o template SAMPREQ para escrever outro programa COBOL.
 
 # Se você quer fazer uma chamada API utilizando o z/OS Connect Requester OAS2
 
