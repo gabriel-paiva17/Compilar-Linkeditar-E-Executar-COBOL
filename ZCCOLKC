@@ -1,0 +1,27 @@
+//ZCCOLKC JOB ,MSGCLASS=H,REGION=0M,TIME=10,
+// MSGLEVEL=(1,1),NOTIFY=&SYSUID
+//ORDER JCLLIB ORDER=(ZOS31.CPAC.PROCLIB)
+//*
+//*****************************************************************
+//* ZCCOLKC,
+//*     Compilar e linkeditar um programa cobol cics para
+//*     chamadas a API via z/OS Connect Requester OAS 2
+//*****************************************************************
+//*
+//COMPILE EXEC IGYWCL,LNGPRFX='ZOS31.IGY',
+// PARM.COBOL='NODYNAM,CICS'
+//COBOL.STEPLIB DD
+//              DD DISP=SHR,DSN=DFH560.CICS.SDFHLOAD
+//COBOL.SYSIN DD DISP=SHR,DSN=GABRIEL.COBOL(SAMPREQC)
+//COBOL.SYSLIB DD DISP=SHR,DSN=DFH560.CICS.SDFHCOB
+//             DD DISP=SHR,DSN=GABRIEL.COBOL.COPYLIB
+//LKED.SYSLMOD DD DISP=SHR,DSN=GABRIEL.COBOL.LOAD(SAMPREQC)
+//*
+//* Aqui vamos passar os programas (LOADS) que o COBOL CICS precisa
+//* chamar, nesse caso precisamos apontar para a biblioteca CICS e para
+//* onde esta o programa BAQCSTUB
+//LKED.CICSLIB DD DISP=SHR,DSN=DFH560.CICS.SDFHLOAD
+//             DD DISP=SHR,DSN=BAQ300.SBAQLIB1
+//LKED.SYSIN DD *
+  INCLUDE CICSLIB(DFHELII)
+  NAME SAMPREQC(R)
