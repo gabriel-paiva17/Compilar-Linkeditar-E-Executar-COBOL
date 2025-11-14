@@ -26,3 +26,8 @@
 //CEEOPTS DD *
     POSIX(ON),
     ENVAR("BAQURI=54.146.129.137", "BAQPORT=443")
+//*
+//* Exemplo com domínio:
+//*
+//* POSIX(ON),
+//* ENVAR("BAQURI=MYSERVER.MY.COM", "BAQPORT=10053")
