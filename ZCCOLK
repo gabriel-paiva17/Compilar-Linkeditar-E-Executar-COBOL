@@ -26,7 +26,8 @@
 //*
 //* NO CONTEXTO DO Z/OS CONNECT REQUESTER OAS2:
 //* 	BAQRINFO e estruturas INFO, REQ e RES.	
-//*     BAQRINFO costuma estar em <produto>.SBAQCOB
+//*     BAQRINFO costuma estar em <produto>.SBAQCOB,
+//*     mas nesse caso esta na COPYLIB
 //COBOL.SYSLIB   DD DISP=SHR,DSN=&HLQWCL..COBOL.COPYLIB
 //*
 //* Onde será gerado o objeto compilado e seu nome
