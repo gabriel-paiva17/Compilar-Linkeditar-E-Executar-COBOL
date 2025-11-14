@@ -25,7 +25,8 @@
 //* COPYBOOKS utilizados no código-fonte COBOL (COPY)
 //*
 //* NO CONTEXTO DO Z/OS CONNECT REQUESTER OAS2:
-//* 	BAQRINFO e estruturas INFO, REQ e RES	
+//* 	BAQRINFO e estruturas INFO, REQ e RES.	
+//*     BAQRINFO costuma estar em <produto>.SBAQCOB
 //COBOL.SYSLIB   DD DISP=SHR,DSN=&HLQWCL..COBOL.COPYLIB
 //*
 //* Onde será gerado o objeto compilado e seu nome
