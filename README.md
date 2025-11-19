@@ -6,7 +6,7 @@ JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte 
 
 ## COBGO
 
-JCL que executa o programa gerado pelo JOB ZCCOLCK. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
+JCL que executa em BATCH o programa gerado pelo JOB ZCCOLCK. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
 
 ## ZCCOLCKC
 
