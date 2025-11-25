@@ -23,6 +23,8 @@
 //* Aqui vamos passar os programas (LOADS) que o COBOL CICS precisa
 //* chamar, nesse caso precisamos apontar para a biblioteca CICS e para
 //* onde esta o programa BAQCSTUB
+//*
+//* Caso o programa seja CICS utilize SBAQLIB1, caso contrário SBAQLIB
 //LKED.CICSLIB DD DISP=SHR,DSN=DFH560.CICS.SDFHLOAD
 //             DD DISP=SHR,DSN=BAQ300.SBAQLIB1
 //LKED.SYSIN DD *
