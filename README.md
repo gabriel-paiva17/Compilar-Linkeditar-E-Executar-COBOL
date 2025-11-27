@@ -16,6 +16,10 @@ JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte 
 
 Template de um código-fonte COBOL que faz uma chamada API via z/OS Connect Requester OAS2. **Seus parâmetros não estão preenchidos**, mas existe um passo a passo comentado para que o **preenchimento seja simples**.
 
+## SAMPLE-COBOL-REQUESTER-OG-IBM
+
+Template original da IBM (sem tratamento) de um COBOL Requester OAS2. **Seus parâmetros estão preenchidos**, portanto recomendamos utilizar o outro sample para preenchimento e esse somente para consultas.
+
 # Se você deseja compilar outro tipo de programa
 
 Você pode reaproveitar os JOBS ZCCOLCK, ZCCOLKC e COBGO para compilar, link-editar e executar qualquer outro programa COBOL. E se quiser aproveitar o template SAMPREQ para escrever outro programa COBOL.
