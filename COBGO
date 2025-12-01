@@ -22,7 +22,8 @@
 //* Estes são parâmetros do z/OS Connect, nao sao
 //* comuns em outros programas.(Apague se preciso)
 //*
-//* Aqui informamos a URI (dominio) e porta da REQ
+//* Aqui informamos a URI (ip ou dominio) e porta 
+//* do servidor z/OS Connect
 //CEEOPTS DD *
     POSIX(ON),
     ENVAR("BAQURI=54.146.129.137", "BAQPORT=443")
