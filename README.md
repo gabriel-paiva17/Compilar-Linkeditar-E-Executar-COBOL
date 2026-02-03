@@ -16,6 +16,10 @@ JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte 
 
 Template de um código-fonte COBOL que faz uma chamada API via z/OS Connect Requester OAS2. **Seus parâmetros não estão preenchidos**, mas existe um passo a passo comentado para que o **preenchimento seja simples**.
 
+## BAQRINFO
+
+Copybook necessário para que uma chamada seja realizada. Contém estruturas para dados de Request e Response.
+
 ## SAMPLE-COBOL-REQUESTER-OG-IBM
 
 Template original da IBM (sem tratamento) de um COBOL Requester OAS2. **Seus parâmetros estão preenchidos**, portanto recomendamos utilizar o outro sample para preenchimento e esse somente para consultas.
