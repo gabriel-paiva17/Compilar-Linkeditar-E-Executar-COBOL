@@ -24,6 +24,10 @@ Copybook necessário para que uma chamada seja realizada. Contém estruturas par
 
 Template original da IBM (sem tratamento) de um COBOL Requester OAS2. **Seus parâmetros estão preenchidos**, portanto recomendamos utilizar o outro sample para preenchimento e esse somente para consultas.
 
+## zconbt.zip
+
+Zip que contém o utilitário z/OS Connect Build Toolkit, necessário para criar o .ara e os copybooks do API Requester.
+
 # Se você deseja compilar outro tipo de programa
 
 Você pode reaproveitar os JOBS ZCCOLCK, ZCCOLKC e COBGO para compilar, link-editar e executar qualquer outro programa COBOL. E se quiser aproveitar o template SAMPREQ para escrever outro programa COBOL.
