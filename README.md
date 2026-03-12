@@ -1,6 +1,6 @@
 # Guia de conteúdos do repositório
 
-## ZCCOLCK
+## ZCCOLK
 
 JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte COBOL baseado no template SAMPREQ, gerando um **programa COBOL BATCH**. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
 
@@ -8,7 +8,7 @@ JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte 
 
 JCL que executa em BATCH o programa gerado pelo JOB ZCCOLCK. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão todos **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
 
-## ZCCOLCKC
+## ZCCOLKC
 
 JCL que utiliza a procedure IGYWCL para compilar e link-editar um código-fonte COBOL baseado no template SAMPREQC (SAMPREQ com algumas alterações para que ele execute comandos CICS), gerando um **programa COBOL CICS**. **Seus parâmetros estão preenchidos com base no contexto do exemplo**, mas estão **comentados para facilitar o reaproveitamento em qualquer outro contexto**.
 
