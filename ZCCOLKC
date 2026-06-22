@@ -8,17 +8,21 @@
 //*     chamadas a API via z/OS Connect Requester OAS 2
 //*****************************************************************
 //*
+// SET HLQWCL=GABRIEL
+// EXPORT SYMLIST=(MEMBER)
+// SET MEMBER=SAMPREQC  
+//*
 //COMPILE EXEC IGYWCL,LNGPRFX='ZOS31.IGY',
 // PARM.COBOL='NODYNAM,CICS'
 //COBOL.STEPLIB DD
 //              DD DISP=SHR,DSN=DFH560.CICS.SDFHLOAD
-//COBOL.SYSIN DD DISP=SHR,DSN=GABRIEL.COBOL(SAMPREQC)
+//COBOL.SYSIN DD DISP=SHR,DSN=&HLQWCL..COBOL(&MEMBER)
 //*
 //*     BAQRINFO costuma estar em <produto>.SBAQCOB,
 //*     mas nesse caso esta na COPYLIB
 //COBOL.SYSLIB DD DISP=SHR,DSN=DFH560.CICS.SDFHCOB
-//             DD DISP=SHR,DSN=GABRIEL.COBOL.COPYLIB
-//LKED.SYSLMOD DD DISP=SHR,DSN=GABRIEL.COBOL.LOAD(SAMPREQC)
+//             DD DISP=SHR,DSN=&HLQWCL..COBOL.COPYLIB
+//LKED.SYSLMOD DD DISP=SHR,DSN=&HLQWCL..COBOL.LOAD(&MEMBER)
 //*
 //* Aqui vamos passar os programas (LOADS) que o COBOL CICS precisa
 //* chamar, nesse caso precisamos apontar para a biblioteca CICS e para
@@ -27,6 +31,6 @@
 //* Caso o programa seja CICS utilize SBAQLIB1, caso contrário SBAQLIB
 //LKED.CICSLIB DD DISP=SHR,DSN=DFH560.CICS.SDFHLOAD
 //             DD DISP=SHR,DSN=BAQ300.SBAQLIB1
-//LKED.SYSIN DD *
+//LKED.SYSIN DD DATA,SYMBOLS=JCLONLY
   INCLUDE CICSLIB(DFHELII)
-  NAME SAMPREQC(R)
+  NAME &MEMBER(R)
