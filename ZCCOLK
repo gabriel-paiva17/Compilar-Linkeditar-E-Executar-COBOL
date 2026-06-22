@@ -9,6 +9,8 @@
 //*     chamada API via BATCH (z/OS Connect Requester OAS2)
 //*****************************************************************
 // SET HLQWCL=GABRIEL
+// EXPORT SYMLIST=(MEMBER)
+// SET MEMBER=SAMPREQ     
 //*
 //* LNGPRFX -> Prefixo dos datasets para compilacao COBOL
 //* LIBPRFX -> Prefixo dos datasets de runtime LE do COBOL
@@ -18,7 +20,7 @@
 //  PARM.LKED='LIST MAP XREF'
 //*
 //* Código-fonte COBOL
-//COBOL.SYSIN    DD DISP=SHR,DSN=&HLQWCL..COBOL(SAMPREQ)
+//COBOL.SYSIN    DD DISP=SHR,DSN=&HLQWCL..COBOL(&MEMBER)
 //*
 //*
 //* A SYSLIB desse step deve ser preenchida com o PDS dos 
@@ -31,10 +33,10 @@
 //COBOL.SYSLIB   DD DISP=SHR,DSN=&HLQWCL..COBOL.COPYLIB
 //*
 //* Onde será gerado o objeto compilado e seu nome
-//COBOL.SYSLIN   DD DISP=SHR,DSN=&HLQWCL..COBOL.OBJECT(SAMPREQ)
+//COBOL.SYSLIN   DD DISP=SHR,DSN=&HLQWCL..COBOL.OBJECT(&MEMBER)
 //*
 //* Onde gerar arquivo de logs da compilação
-//COBOL.SYSPRINT DD DISP=SHR,DSN=&HLQWCL..COBOL.LISTING(SAMPREQ)
+//COBOL.SYSPRINT DD DISP=SHR,DSN=&HLQWCL..COBOL.LISTING(&MEMBER)
 //*
 //* Apontar para o PDS onde você gerou o objeto
 //LKED.OBJECT    DD DISP=SHR,
@@ -51,13 +53,13 @@
 //LKED.RESLIB    DD DISP=SHR,DSN=BAQ300.SBAQLIB
 //*
 //* Configurações do que será gerado no LOAD
-//LKED.SYSLIN    DD *
-    INCLUDE OBJECT(SAMPREQ)
-    ENTRY SAMPREQ
-    NAME SAMPREQ(R)
+//LKED.SYSLIN    DD DATA,SYMBOLS=JCLONLY
+    INCLUDE OBJECT(&MEMBER)
+    ENTRY &MEMBER
+    NAME &MEMBER(R)
 /*
 //*
 //* Indique o member em que você quer que o
 //* programa executável seja gerado
 //LKED.SYSLMOD   DD DISP=SHR,
-//  DSN=&HLQWCL..COBOL.LOAD(SAMPREQ)
+//  DSN=&HLQWCL..COBOL.LOAD(&MEMBER)
